@@ -27,6 +27,21 @@ body {
   text-align: center;
 }
 
+.price {
+  font-weight: bold;
+}
+
+.price--old {
+  display: inline-block;
+  opacity: 0.5;
+  transform: scale(0.8);
+  text-decoration: line-through;
+}
+
+.price--new {
+  color: red;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -53,6 +68,7 @@ header .container {
   font-family: 'Times New Roman', serif;
   font-size: 24px;
   text-transform: uppercase;
+  color: #4aad3b;
 }
 
 .contacts {
@@ -69,15 +85,20 @@ header .container {
 }
 
 .intro {
-  height: 30vw;
-  min-height: 300px;
   background-image: url('images/bg.jpg');
-  background-position:20% center;
+  background-position:center;
   background-size: cover;
+  padding-top: 10px;
+  padding-bottom: 40px;
 }
 
 .offer {
   display: flex;
+}
+
+.offer__important {
+  color: red;
+  font-weight: bold;
 }
 
 .offer__col {
@@ -87,20 +108,24 @@ header .container {
 }
 
 .offer__card {
-  border: 1px solid #4aad3b;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   padding: 20px;
   margin: 40px 20px 0;
   font-size: 26px;
   line-height: 37px;
-  font-weight: bold;
   flex: 1;
 }
 
 .offer__accent {
+  display: flex;
+  align-items: baseline;
+  color: #4aad3b;
+}
+
+.offer__accent--big {
   font-size: 200px;
   line-height: 210px;
-  color: #4aad3b;
 }
 
 table {
@@ -133,12 +158,17 @@ td {
 }
 
 .advantages li {
+  position: relative;
+  margin-left: 40px;
   list-style: none;
   margin-bottom: 20px;
 }
 
 .advantages li::before {
-  content: url('images/advantages-icon.png');
+  content: url('images/check-icon.png');
+  position: absolute;
+  top: 0;
+  left: -40px;
 }
 
 .use {
@@ -176,10 +206,6 @@ td {
   text-align: left;
 }
 
-.catalog__price {
-  font-weight: bold;
-}
-
 .docs {
   display: flex;
   flex-wrap: wrap;
@@ -191,6 +217,79 @@ td {
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 40px;
+}
+
+#contact {
+  padding: 50px 15px;
+  background: #6195C1;
+  text-align: center;
+}
+#contact h2 {
+  margin: 0 0 15px 0;
+  color: #fff;
+  font-weight: 500;
+}
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+#contact-form input,
+#contact-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 10px;
+  background: #2C5B82;
+  color: #fff;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+}
+#contact-form input::-webkit-input-placeholder,
+#contact-form textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+#contact-form input:-moz-placeholder,
+#contact-form textarea:-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+#contact-form input::-moz-placeholder,
+#contact-form textarea::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+#contact-form input:-ms-input-placeholder,
+#contact-form textarea:-ms-input-placeholder {
+  color: #fff;
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  background: #0E3555;
+}
+#contact-form textarea {
+  height: 150px;
+  resize: none;
+}
+#contact-form button {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: none;
+  color: #3498db;
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+              0 1px 2px rgba(0,0,0,0.24);
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+}
+#contact-form button:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+              0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 @media (min-width: 716px) {
@@ -226,6 +325,11 @@ td {
   .section__title {
     margin-top: 20px;
     font-size: 28px;
+  }
+
+  .intro {
+    padding-top: 5px;
+    padding-bottom: 20px;
   }
 
   .offer {
