@@ -315,6 +315,7 @@ td {
   header {
     position: initial;
     box-shadow: none;
+    padding-top: 10px;
   }
 
   header .container {
