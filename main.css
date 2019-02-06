@@ -120,6 +120,7 @@ header .container {
 .offer__accent {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
   color: #4aad3b;
 }
 
